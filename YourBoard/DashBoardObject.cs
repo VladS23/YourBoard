@@ -24,8 +24,8 @@ namespace YourBoard
             PersonImage.Source = myBitmapImage;
             PersonImage.Stretch = Stretch.Fill;
             RectangleGeometry roundedImage = new RectangleGeometry();
-            roundedImage.RadiusX = 7;
-            roundedImage.RadiusY = 7;
+            roundedImage.RadiusX = 4;
+            roundedImage.RadiusY = 4;
             roundedImage.Rect = new Rect(new Size(50, 50));
             PersonImage.Clip = roundedImage;
             myButton.Content = PersonImage;

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
 
 namespace YourBoard
 {
@@ -25,7 +26,7 @@ namespace YourBoard
             InitializeComponent();
             DashBoardRoot dashBoardRoot = new DashBoardRoot();
             MainGrid.Children.Add(DashBoardRoot.MainCanvas);
-            Person p1 = new Person(@"C:\Users\Vlad\Desktop\person.png", "surname", "name", "patronymic");
+            Person p1 = new Person("incorrectPath", "surname", "name", "patronymic");
         }
     }
 }
