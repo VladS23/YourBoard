@@ -36,9 +36,14 @@ namespace YourBoard
             myBitmapImage.EndInit();
             PersonImage.Source = myBitmapImage;
             PersonImage.Stretch = Stretch.Fill;
-            //myButton.Content = PersonImage;
-            myButton.Width = 500;
-            myButton.Height = 500;
+            RectangleGeometry roundedImage = new RectangleGeometry();
+            roundedImage.RadiusX = 7;
+            roundedImage.RadiusY = 7;
+            roundedImage.Rect = new Rect(new System.Windows.Size(50,50));
+            PersonImage.Clip = roundedImage;
+            myButton.Content = PersonImage;
+            myButton.Width = 50;
+            myButton.Height = 50;
             Canvas.SetLeft(mystackPanel, 100);
             Canvas.SetTop(mystackPanel, 100);
             mystackPanel.Children.Add(myButton);
@@ -49,12 +54,6 @@ namespace YourBoard
             LinearGradientBrush gradientBrush = new LinearGradientBrush();
             gradientBrush.GradientStops.Add(new GradientStop(Colors.LightGray, 0));
             gradientBrush.GradientStops.Add(new GradientStop(Colors.White, 1));
-
-            // добавление ресурса в словарь ресурсов окна
-            this.Resources.Add("buttonGradientBrush", gradientBrush);
-
-            // установка ресурса у кнопки
-            myButton.Background = (Brush)this.TryFindResource("buttonGradientBrush");
         }
     }
 }
