@@ -26,7 +26,7 @@ namespace YourBoard
             InitializeComponent();
             DashBoardRoot dashBoardRoot = new DashBoardRoot();
             MainGrid.Children.Add(DashBoardRoot.MainCanvas);
-            Person p1 = new Person("incorrectPath", "surname", "name", "patronymic");
+            Person p1 = new Person("incorrectPath", "surname", "name", "patronymic", 100, 100);
         }
     }
 }

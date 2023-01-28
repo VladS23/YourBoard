@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
@@ -13,8 +14,24 @@ namespace YourBoard
     public abstract class DashBoardObject: DashBoardElement
     {
         public StackPanel view = new StackPanel();
-        public override void CreateView(string imageAdr)
+        public bool isMousePressedinPerson = false;
+        public double X
         {
+            get { return x; }
+            set { x = value; Canvas.SetLeft(view, value); }
+        }
+        public double Y
+        {
+            get { return y; }
+            set { y = value; Canvas.SetTop(view, value); }
+        }
+
+        private double x = 0;
+        private double y = 0;
+        public override void CreateView(string imageAdr, double X_, double Y_)
+        {
+            X = X_;
+            Y = Y_;
             Button myButton = new Button();
             BitmapImage myBitmapImage = new BitmapImage();
             Image PersonImage = new Image();
@@ -31,11 +48,14 @@ namespace YourBoard
             myButton.Content = PersonImage;
             myButton.Width = 50;
             myButton.Height = 50;
-            Canvas.SetLeft(view, 100);
-            Canvas.SetTop(view, 100);
+            Canvas.SetLeft(view, X_);
+            Canvas.SetTop(view, Y_);
             view.Children.Add(myButton);
             Panel.SetZIndex(view, 150);
             DashBoardRoot.MainCanvas.Children.Add(view);
+            myButton.PreviewMouseMove += OnMouseMove;
+            myButton.PreviewMouseLeftButtonUp += OnMouseUp;
+            myButton.PreviewMouseLeftButtonDown += OnMouseDown;
         }
         public override void Delete()
         {
@@ -44,6 +64,52 @@ namespace YourBoard
         public override void Move()
         {
 
+        }
+
+        System.Windows.Point pressedPos;
+        System.Windows.Point curPos;
+        private void OnMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            isMousePressedinPerson = true;
+            pressedPos = e.GetPosition((System.Windows.IInputElement)view.Parent);
+        }
+
+        private void OnMouseUp(object sender, MouseButtonEventArgs e)
+        {
+            isMousePressedinPerson = false;
+        }
+        private void OnMouseMove(object sender, MouseEventArgs e)
+        {
+            curPos = e.GetPosition((System.Windows.IInputElement)view.Parent);
+            if (isMousePressedinPerson)
+            {
+                /* foreach (Connection connection in CanvasRoot.Connections)
+                 {
+                     if (connection.person1 == this || connection.person2 == this)
+                     {
+                         connection.UpdateConnection();
+                     }
+                 }*/
+                X = X + curPos.X - pressedPos.X;
+                Y = Y + curPos.Y - pressedPos.Y;
+                if (X < 0)
+                {
+                    X = 0;
+                }
+                else if (Y < 0)
+                {
+                    Y = 0;
+                }
+                else if (Y > DashBoardRoot.MainCanvas.ActualHeight - view.ActualHeight)
+                {
+                    Y = DashBoardRoot.MainCanvas.ActualHeight - view.ActualHeight;
+                }
+                else if (X > DashBoardRoot.MainCanvas.ActualWidth - view.ActualWidth)
+                {
+                    X = DashBoardRoot.MainCanvas.ActualWidth - view.ActualWidth;
+                }
+            }
+            pressedPos = curPos;
         }
     }
 }
