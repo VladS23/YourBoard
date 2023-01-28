@@ -7,6 +7,13 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-
+        <Button  Width="50" Height="50" Margin="100, 100, 100, 100" VerticalAlignment="Top">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+            <Image Source="C:\Users\Vlad\Desktop\png-transparent-security-shield-protection-safety-protect-icon-secure-safe-internet-symbol (1).png" />
+        </Button>
     </Grid>
 </Window>
