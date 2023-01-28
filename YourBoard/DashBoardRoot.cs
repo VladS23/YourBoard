@@ -19,7 +19,7 @@ namespace YourBoard
         public static bool isMousePressedinPerson = false;
         public DashBoardRoot()
         {
-            MainCanvas.Background = new SolidColorBrush(Color.FromRgb(69, 94, 131));
+            MainCanvas.Background = new SolidColorBrush(Color.FromRgb(255,255,255));
             ContextMenu canvasMenu = new ContextMenu();
             MenuItem createPerson = new MenuItem();
             createPerson.Header = "Create a person";

@@ -25,35 +25,7 @@ namespace YourBoard
             InitializeComponent();
             DashBoardRoot dashBoardRoot = new DashBoardRoot();
             MainGrid.Children.Add(DashBoardRoot.MainCanvas);
-
-            StackPanel view = new StackPanel();
-            StackPanel mystackPanel = new StackPanel();
-            Button myButton = new Button();
-            BitmapImage myBitmapImage = new BitmapImage();
-            Image PersonImage = new Image();
-            myBitmapImage.BeginInit();
-            myBitmapImage.UriSource = new Uri(@"C:\Users\Vlad\Desktop\photo_2023-01-18_13-40-30.jpg");
-            myBitmapImage.EndInit();
-            PersonImage.Source = myBitmapImage;
-            PersonImage.Stretch = Stretch.Fill;
-            RectangleGeometry roundedImage = new RectangleGeometry();
-            roundedImage.RadiusX = 7;
-            roundedImage.RadiusY = 7;
-            roundedImage.Rect = new Rect(new System.Windows.Size(50,50));
-            PersonImage.Clip = roundedImage;
-            myButton.Content = PersonImage;
-            myButton.Width = 50;
-            myButton.Height = 50;
-            Canvas.SetLeft(mystackPanel, 100);
-            Canvas.SetTop(mystackPanel, 100);
-            mystackPanel.Children.Add(myButton);
-            view = mystackPanel;
-            Canvas.SetZIndex(view, 150);
-            DashBoardRoot.MainCanvas.Children.Add(view);
-
-            LinearGradientBrush gradientBrush = new LinearGradientBrush();
-            gradientBrush.GradientStops.Add(new GradientStop(Colors.LightGray, 0));
-            gradientBrush.GradientStops.Add(new GradientStop(Colors.White, 1));
+            Person p1 = new Person(@"C:\Users\Vlad\Desktop\person.png", "surname", "name", "patronymic");
         }
     }
 }

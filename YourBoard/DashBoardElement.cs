@@ -8,7 +8,7 @@ namespace YourBoard
 {
     public abstract class DashBoardElement
     {
-        public abstract void Create();
+        public abstract void CreateView(string imageAdr);
         public abstract void Delete();
         public abstract void Move();
     }
