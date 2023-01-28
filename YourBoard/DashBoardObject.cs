@@ -14,7 +14,7 @@ namespace YourBoard
     public abstract class DashBoardObject: DashBoardElement
     {
         public StackPanel view = new StackPanel();
-        public bool isMousePressedinPerson = false;
+        public static bool isMousePressedinObject = false;
         public double X
         {
             get { return x; }
@@ -61,37 +61,30 @@ namespace YourBoard
         {
 
         }
-        public override void Move()
+        public override void Move(Point curPos, Point pressedPos)
         {
-
+            X = X + curPos.X - pressedPos.X;
+            Y = Y + curPos.Y - pressedPos.Y;
         }
 
         System.Windows.Point pressedPos;
         System.Windows.Point curPos;
         private void OnMouseDown(object sender, MouseButtonEventArgs e)
         {
-            isMousePressedinPerson = true;
+            isMousePressedinObject = true;
             pressedPos = e.GetPosition((System.Windows.IInputElement)view.Parent);
         }
 
         private void OnMouseUp(object sender, MouseButtonEventArgs e)
         {
-            isMousePressedinPerson = false;
+            isMousePressedinObject = false;
         }
         private void OnMouseMove(object sender, MouseEventArgs e)
         {
             curPos = e.GetPosition((System.Windows.IInputElement)view.Parent);
-            if (isMousePressedinPerson)
+            if (isMousePressedinObject)
             {
-                /* foreach (Connection connection in CanvasRoot.Connections)
-                 {
-                     if (connection.person1 == this || connection.person2 == this)
-                     {
-                         connection.UpdateConnection();
-                     }
-                 }*/
-                X = X + curPos.X - pressedPos.X;
-                Y = Y + curPos.Y - pressedPos.Y;
+                Move(curPos, pressedPos);
                 if (X < 0)
                 {
                     X = 0;

@@ -14,7 +14,7 @@ namespace YourBoard
     {
         public static double createdPersonX;
         public static double createdPersonY;
-        public static List<DashBoardElement> Persons = new List<DashBoardElement>();
+        public static List<DashBoardElement> Elements = new List<DashBoardElement>();
         public static Canvas MainCanvas = new Canvas();
         public static bool isMousePressedinPerson = false;
         public DashBoardRoot()
@@ -30,14 +30,33 @@ namespace YourBoard
             MainCanvas.PreviewMouseLeftButtonUp += OnMouseUp;
         }
 
+        bool isMousePressed = false;
+        System.Windows.Point pressedPos;
+        System.Windows.Point curPos;
         private void OnMouseUp(object sender, MouseButtonEventArgs e)
         {
-
+            if (!DashBoardObject.isMousePressedinObject)
+            {
+                isMousePressed = false;
+            }
         }
-
         private void OnMouseMove(object sender, MouseEventArgs e)
         {
-
+            if (!DashBoardObject.isMousePressedinObject)
+            {
+                curPos = e.GetPosition(MainCanvas);
+                if (Mouse.LeftButton == MouseButtonState.Pressed)
+                {
+                    foreach (DashBoardElement element in Elements)
+                    {
+                        if (element is DashBoardObject)
+                        {
+                            ((DashBoardObject)element).Move(curPos, pressedPos);
+                        }
+                    }
+                }
+                pressedPos = curPos;
+            }
         }
 
         private void CreatePersonMenuOpen(object sender, MouseButtonEventArgs e)
