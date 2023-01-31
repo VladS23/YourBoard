@@ -33,7 +33,7 @@ namespace YourBoard
         }
         public void CreateView(System.Windows.Media.SolidColorBrush colour, DashBoardObject dbobj1, DashBoardObject dbobj2)
         {
-            Canvas.SetZIndex(l1, 0);
+            Panel.SetZIndex(l1, 0);
             l1.StrokeThickness = 2;
             l1.Stroke = colour;
             l1.X1 = dbobj1.X + 25;
@@ -48,7 +48,10 @@ namespace YourBoard
         }
         public override void Move(Point curpos, Point pressedpos)
         {
-
+            l1.X1 = DashBoardObject1.X + 25;
+            l1.Y1 = DashBoardObject1.Y + 25;
+            l1.X2 = DashBoardObject2.X + 25;
+            l1.Y2 = DashBoardObject2.Y + 25;
         }
     }
 }

@@ -48,10 +48,7 @@ namespace YourBoard
                 {
                     foreach (DashBoardElement element in Elements)
                     {
-                        if (element is DashBoardObject)
-                        {
-                            ((DashBoardObject)element).Move(curPos, pressedPos);
-                        }
+                       element.Move(curPos, pressedPos);
                     }
                 }
                 pressedPos = curPos;
