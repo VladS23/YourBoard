@@ -28,7 +28,7 @@ namespace YourBoard
 
         private double x = 0;
         private double y = 0;
-        public override void CreateView(string imageAdr, double X_, double Y_)
+        public void CreateView(string imageAdr, double X_, double Y_)
         {
             X = X_;
             Y = Y_;

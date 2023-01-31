@@ -17,6 +17,9 @@ namespace YourBoard
         public static List<DashBoardElement> Elements = new List<DashBoardElement>();
         public static Canvas MainCanvas = new Canvas();
         public static bool isMousePressedinPerson = false;
+        bool isMousePressed = false;
+        Point pressedPos;
+        Point curPos;
         public DashBoardRoot()
         {
             MainCanvas.Background = new SolidColorBrush(Color.FromRgb(255,255,255));
@@ -29,10 +32,6 @@ namespace YourBoard
             MainCanvas.PreviewMouseMove += OnMouseMove;
             MainCanvas.PreviewMouseLeftButtonUp += OnMouseUp;
         }
-
-        bool isMousePressed = false;
-        System.Windows.Point pressedPos;
-        System.Windows.Point curPos;
         private void OnMouseUp(object sender, MouseButtonEventArgs e)
         {
             if (!DashBoardObject.isMousePressedinObject)

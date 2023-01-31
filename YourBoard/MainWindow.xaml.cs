@@ -26,11 +26,20 @@ namespace YourBoard
             InitializeComponent();
             DashBoardRoot dashBoardRoot = new DashBoardRoot();
             MainGrid.Children.Add(DashBoardRoot.MainCanvas);
-            DashBoardRoot.Elements.Add (new Person("incorrectPath", "surname", "name", "patronymic", 100, 100));
-            DashBoardRoot.Elements.Add(new Person("incorrectPath", "surname", "name", "patronymic", 243, 342));
-            DashBoardRoot.Elements.Add(new Person("incorrectPath", "surname", "name", "patronymic", 243, 543));
-            DashBoardRoot.Elements.Add(new Person("incorrectPath", "surname", "name", "patronymic", 46, 786));
-            DashBoardRoot.Elements.Add(new Person("incorrectPath", "surname", "name", "patronymic", 254, 987));
+            DashBoardRoot.Elements.Add (new Person("incorrectPath", "Петров", "Петр", "", 100, 100));
+            DashBoardRoot.Elements.Add(new Person("incorrectPath", "Иванов", "Иван", "Иванович", 243, 342));
+            DashBoardRoot.Elements.Add(new Person("incorrectPath", "Лисин", "Генадий", "Михайлович", 243, 543));
+            DashBoardRoot.Elements.Add(new Person("incorrectPath", "Пирсов", "Даниил", "Сергеевич", 46, 786));
+            DashBoardRoot.Elements.Add(new Person("incorrectPath", "Кротов", "Василий", "Петрович", 254, 987));
+            DashBoardRoot.Elements.Add(new Relation(Relation.RelationTypes.Friends, (DashBoardObject)DashBoardRoot.Elements[0], (DashBoardObject)DashBoardRoot.Elements[1]));
+            DashBoardRoot.Elements.Add(new Relation(Relation.RelationTypes.Friends, (DashBoardObject)DashBoardRoot.Elements[2], (DashBoardObject)DashBoardRoot.Elements[1]));
+            DashBoardRoot.Elements.Add(new Relation(Relation.RelationTypes.Friends, (DashBoardObject)DashBoardRoot.Elements[0], (DashBoardObject)DashBoardRoot.Elements[4]));
+            DashBoardRoot.Elements.Add(new Relation(Relation.RelationTypes.Friends, (DashBoardObject)DashBoardRoot.Elements[3], (DashBoardObject)DashBoardRoot.Elements[1]));
+            DashBoardRoot.Elements.Add(new Relation(Relation.RelationTypes.Friends, (DashBoardObject)DashBoardRoot.Elements[2], (DashBoardObject)DashBoardRoot.Elements[3]));
+
+
+
+
         }
     }
 }
