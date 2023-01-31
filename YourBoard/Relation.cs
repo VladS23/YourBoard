@@ -13,11 +13,19 @@ namespace YourBoard
     {
         public enum RelationTypes
         {
-            Friends
+            Friends=0,
+            Familiar, 
+            Сolleagues, 
+            Love, 
+            Family,
         }
         Dictionary<RelationTypes, System.Windows.Media.SolidColorBrush> typeToColor = new Dictionary<RelationTypes, System.Windows.Media.SolidColorBrush>()
 {
-            {RelationTypes.Friends, System.Windows.Media.Brushes.Green }
+            {RelationTypes.Friends, System.Windows.Media.Brushes.Green },
+            {RelationTypes.Familiar, System.Windows.Media.Brushes.Gray },
+            {RelationTypes.Сolleagues, System.Windows.Media.Brushes.CadetBlue },
+            {RelationTypes.Love, System.Windows.Media.Brushes.HotPink },
+            {RelationTypes.Family, System.Windows.Media.Brushes.Orange }
 };
         DashBoardObject DashBoardObject1 { get; set; }
         DashBoardObject DashBoardObject2 { get; set; }

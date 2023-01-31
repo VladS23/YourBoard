@@ -36,7 +36,7 @@ namespace YourBoard
             }
             for (int i = 0; i < 50; i++)
             {
-                DashBoardRoot.Elements.Add(new Relation(Relation.RelationTypes.Friends, (DashBoardObject)DashBoardRoot.Elements[rand.Next(100)], (DashBoardObject)DashBoardRoot.Elements[rand.Next(100)]));
+                DashBoardRoot.Elements.Add(new Relation((Relation.RelationTypes)(rand.Next(5)), (DashBoardObject)DashBoardRoot.Elements[rand.Next(100)], (DashBoardObject)DashBoardRoot.Elements[rand.Next(100)]));
             }
         }
     }
