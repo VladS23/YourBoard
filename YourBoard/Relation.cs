@@ -9,7 +9,7 @@ using System.Windows.Shapes;
 
 namespace YourBoard
 {
-    internal class Relation : DashBoardElement
+    public class Relation : DashBoardElement
     {
         public enum RelationTypes
         {
@@ -28,6 +28,8 @@ namespace YourBoard
             RelationType = type;
             DashBoardObject1 = dbobj1;
             DashBoardObject2 = dbobj2;
+            dbobj1.Relations.Add(this);
+            dbobj2.Relations.Add(this);
             CreateView(typeToColor[type], dbobj1, dbobj2);
             
         }

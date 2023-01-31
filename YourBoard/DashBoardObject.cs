@@ -15,6 +15,7 @@ namespace YourBoard
     {
         public StackPanel view = new StackPanel();
         public static bool isMousePressedinObject = false;
+        public List<Relation> Relations = new List<Relation>();
         public double X
         {
             get { return x; }
@@ -101,6 +102,10 @@ namespace YourBoard
                 {
                     X = DashBoardRoot.MainCanvas.ActualWidth - view.ActualWidth;
                 }
+            }
+            foreach (Relation rel in Relations)
+            {
+                rel.Move(curPos, pressedPos);
             }
             pressedPos = curPos;
         }
