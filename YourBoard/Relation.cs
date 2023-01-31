@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using System.Windows.Shapes;
 
 namespace YourBoard
@@ -27,10 +28,19 @@ namespace YourBoard
             {RelationTypes.Love, System.Windows.Media.Brushes.HotPink },
             {RelationTypes.Family, System.Windows.Media.Brushes.Orange }
 };
+        Dictionary<RelationTypes, string> typeToText = new Dictionary<RelationTypes, string>()
+{
+            {RelationTypes.Friends, "Друзья" },
+            {RelationTypes.Familiar, "Знакомые"},
+            {RelationTypes.Сolleagues, "Коллеги"},
+            {RelationTypes.Love, "В отношениях" },
+            {RelationTypes.Family, "Семья"}
+};
         DashBoardObject DashBoardObject1 { get; set; }
         DashBoardObject DashBoardObject2 { get; set; }
         RelationTypes RelationType { get; set; }
         public Line l1 = new Line();
+        public ToolTip toolTip = new ToolTip();
         public Relation(RelationTypes type, DashBoardObject dbobj1, DashBoardObject dbobj2)
         {
             RelationType = type;
@@ -39,12 +49,16 @@ namespace YourBoard
             dbobj1.Relations.Add(this);
             dbobj2.Relations.Add(this);
             CreateView(typeToColor[type], dbobj1, dbobj2);
-            
+            StackPanel toolTipPanel = new StackPanel();
+            toolTipPanel.Children.Add(new TextBlock { Text = typeToText[type] });
+            toolTip.Content = toolTipPanel;
+            l1.ToolTip = toolTip;
         }
+
         public void CreateView(System.Windows.Media.SolidColorBrush colour, DashBoardObject dbobj1, DashBoardObject dbobj2)
         {
             Panel.SetZIndex(l1, 0);
-            l1.StrokeThickness = 2;
+            l1.StrokeThickness = 3;
             l1.Stroke = colour;
             l1.X1 = dbobj1.X + 25;
             l1.Y1 = dbobj1.Y + 25;
