@@ -8,6 +8,7 @@ using System.Resources;
 using System.Windows.Controls;
 using System.IO;
 using System.Windows.Input;
+using System.Windows.Media;
 
 namespace YourBoard
 {
@@ -30,6 +31,7 @@ namespace YourBoard
             btn.Style = (Style)btn.FindResource("PersonButStyle");
             {
                 TextBlock surnameTextBlock = new TextBlock();
+                surnameTextBlock.FontWeight = System.Windows.FontWeights.Bold;
                 surnameTextBlock.Text = personSurname;
                 surnameTextBlock.HorizontalAlignment = HorizontalAlignment.Center;
                 view.Children.Add(surnameTextBlock);
@@ -37,6 +39,7 @@ namespace YourBoard
             if (personName != "")
             {
                 TextBlock nameTextBlock = new TextBlock();
+                nameTextBlock.FontWeight = System.Windows.FontWeights.Bold;
                 nameTextBlock.Text = personName;
                 nameTextBlock.HorizontalAlignment = HorizontalAlignment.Center;
                 view.Children.Add(nameTextBlock);
@@ -44,6 +47,7 @@ namespace YourBoard
             if (personPatronymic != "")
             {
                 TextBlock patronymicTextBlock = new TextBlock();
+                patronymicTextBlock.FontWeight = System.Windows.FontWeights.Bold;
                 patronymicTextBlock.Text = personPatronymic;
                 patronymicTextBlock.HorizontalAlignment = HorizontalAlignment.Center;
                 view.Children.Add(patronymicTextBlock);
