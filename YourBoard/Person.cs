@@ -18,60 +18,36 @@ namespace YourBoard
         public string PersonName
         { get
             {
-                return PersonName;
+                return name;
             }
             set
             {
-                this.PersonName = value;
+                name = value;
                 nameTextBlock.Text = value;
-                if (nameTextBlock.Text == "")
-                {
-                    nameTextBlock.Visibility = Visibility.Hidden;
-                }
-                else
-                {
-                    nameTextBlock.Visibility = Visibility.Visible;
-                }
             } 
         }
         public string PersonSurname
         {
             get
             {
-                return PersonSurname;
+                return surname;
             }
             set
             {
-                this.PersonSurname = value;
+                surname = value;
                 surnameTextBlock.Text = value;
-                if (surnameTextBlock.Text == "")
-                {
-                    surnameTextBlock.Visibility = Visibility.Hidden;
-                }
-                else
-                {
-                    surnameTextBlock.Visibility = Visibility.Visible;
-                }
             }
         }
         public string PersonPatronymic
         {
             get
             {
-                return PersonPatronymic;
+                return patronymic;
             }
             set
             {
-                this.PersonPatronymic = value;
+                patronymic = value;
                 patronymicTextBlock.Text = value;
-                if (patronymicTextBlock.Text == "")
-                {
-                    patronymicTextBlock.Visibility = Visibility.Hidden;
-                }
-                else
-                {
-                    patronymicTextBlock.Visibility = Visibility.Visible;
-                }
             }
         }
         public string PersonBornDate { get; set; } = "";
@@ -91,6 +67,9 @@ namespace YourBoard
         public string PersonOtherInfo4 { get; set; } = "";
         public string PersonOtherInfo5 { get; set; } = "";
         public string PersonOtherInfo6 { get; set; } = "";
+        private string name;
+        private string surname;
+        private string patronymic;
         TextBlock nameTextBlock = new TextBlock();
         TextBlock surnameTextBlock = new TextBlock();
         TextBlock patronymicTextBlock = new TextBlock();

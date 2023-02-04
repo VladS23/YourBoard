@@ -19,9 +19,13 @@ namespace YourBoard
     /// </summary>
     public partial class PersonWindow : Window
     {
+        MainWindow.WindowType windowType;
+        Person thisPerson;
         public PersonWindow(MainWindow.WindowType type, Person person, Point point)
         {
             InitializeComponent();
+            windowType = type;
+            thisPerson = person;
             if (type == MainWindow.WindowType.Update)
             {
                 createBtn.Content = "Сохранить";
@@ -67,10 +71,42 @@ namespace YourBoard
             other6TextBox.LostFocus += other6TextBoxLostFocus;
             commTextBox.GotFocus += commTextBoxGotFocus;
             commTextBox.LostFocus += commTextBoxLostFocus;
-
+            createBtn.Click += SaveOrCreate;
 
         }
 
+        private void SaveOrCreate(object sender, RoutedEventArgs e)
+        {
+            if (windowType == MainWindow.WindowType.Update)
+            {
+                SavePersonData(thisPerson);
+            }
+            this.Close();
+        }
+
+        private void SavePersonData(Person person)
+        {
+            person.PersonSurname=surnameTextBox.Text;
+            person.PersonName=nameTextBox.Text;
+            person.PersonPatronymic=patronymicTextBox.Text;
+            person.PersonBornDate=dateTextBox.Text;
+            person.PersonEmail=emailTextBox.Text;
+            person.PersonAdress=adressTextBox.Text;
+            person.PersonWork = workTextBox.Text;
+            person.PersonUniver=univerTextBox.Text;
+            person.PersonPhone=phoneTextBox.Text;
+            person.PersonPost=postTextBox.Text;
+            person.PersonSpec=specTextBox.Text;
+            person.PersonVk=VkTextBox.Text;
+            person.PersonTg=TgTextBox.Text;
+            person.PersonOtherInfo1 = other1TextBox.Text;
+            person.PersonOtherInfo2 = other2TextBox.Text;
+            person.PersonOtherInfo3 = other3TextBox.Text;
+            person.PersonOtherInfo4 = other4TextBox.Text;
+            person.PersonOtherInfo5 = other5TextBox.Text;
+            person.PersonOtherInfo6 = other6TextBox.Text;
+            person.PersonComm = new TextRange(commTextBox.Document.ContentStart, commTextBox.Document.ContentEnd).Text.Trim();
+        }
         private void LoadPersonData(Person person)
         {
             nameTextBox.Text = person.PersonName;
