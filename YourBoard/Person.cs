@@ -15,9 +15,65 @@ namespace YourBoard
 {
     public class Person:DashBoardObject
     {
-        public string PersonName { get; set; } = "";
-        public string PersonSurname { get; set; } = "";
-        public string PersonPatronymic { get; set; } = "";
+        public string PersonName
+        { get
+            {
+                return PersonName;
+            }
+            set
+            {
+                this.PersonName = value;
+                nameTextBlock.Text = value;
+                if (nameTextBlock.Text == "")
+                {
+                    nameTextBlock.Visibility = Visibility.Hidden;
+                }
+                else
+                {
+                    nameTextBlock.Visibility = Visibility.Visible;
+                }
+            } 
+        }
+        public string PersonSurname
+        {
+            get
+            {
+                return PersonSurname;
+            }
+            set
+            {
+                this.PersonSurname = value;
+                surnameTextBlock.Text = value;
+                if (surnameTextBlock.Text == "")
+                {
+                    surnameTextBlock.Visibility = Visibility.Hidden;
+                }
+                else
+                {
+                    surnameTextBlock.Visibility = Visibility.Visible;
+                }
+            }
+        }
+        public string PersonPatronymic
+        {
+            get
+            {
+                return PersonPatronymic;
+            }
+            set
+            {
+                this.PersonPatronymic = value;
+                patronymicTextBlock.Text = value;
+                if (patronymicTextBlock.Text == "")
+                {
+                    patronymicTextBlock.Visibility = Visibility.Hidden;
+                }
+                else
+                {
+                    patronymicTextBlock.Visibility = Visibility.Visible;
+                }
+            }
+        }
         public string PersonBornDate { get; set; } = "";
         public string PersonEmail{ get; set; } = "";
         public string PersonAdress { get; set; } = "";
@@ -35,6 +91,9 @@ namespace YourBoard
         public string PersonOtherInfo4 { get; set; } = "";
         public string PersonOtherInfo5 { get; set; } = "";
         public string PersonOtherInfo6 { get; set; } = "";
+        TextBlock nameTextBlock = new TextBlock();
+        TextBlock surnameTextBlock = new TextBlock();
+        TextBlock patronymicTextBlock = new TextBlock();
         public Person(string avatar, string personSurname, string personName, string personPatronymic, double X, double Y)
         {
             try
@@ -48,7 +107,6 @@ namespace YourBoard
             Button btn = view.Children.OfType<Button>().FirstOrDefault();
             btn.Style = (Style)btn.FindResource("PersonButStyle");
             {
-                TextBlock surnameTextBlock = new TextBlock();
                 surnameTextBlock.FontWeight = System.Windows.FontWeights.Bold;
                 surnameTextBlock.Text = personSurname;
                 PersonSurname = personSurname;
@@ -57,7 +115,6 @@ namespace YourBoard
             }
             if (personName != "")
             {
-                TextBlock nameTextBlock = new TextBlock();
                 nameTextBlock.FontWeight = System.Windows.FontWeights.Bold;
                 nameTextBlock.Text = personName;
                 PersonName = personName;
@@ -66,7 +123,6 @@ namespace YourBoard
             }
             if (personPatronymic != "")
             {
-                TextBlock patronymicTextBlock = new TextBlock();
                 patronymicTextBlock.FontWeight = System.Windows.FontWeights.Bold;
                 patronymicTextBlock.Text = personPatronymic;
                 PersonPatronymic = personPatronymic;
