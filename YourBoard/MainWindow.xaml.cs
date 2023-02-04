@@ -30,14 +30,16 @@ namespace YourBoard
             string[] patronymic = { "Александрович", "Михайлович", "Сергеевич", "Дмитриевич", "Андреевич", "Алексеевич", "Максимович", "Евгеньевич", "Владимирович", "Иванович" };
             DashBoardRoot dashBoardRoot = new DashBoardRoot();
             MainGrid.Children.Add(DashBoardRoot.MainCanvas);
-            for (int i=0; i<100; i++)
+            for (int i=0; i<10; i++)
             {
                 DashBoardRoot.Elements.Add(new Person("Incorrect Path", surname[rand.Next(20)], name[rand.Next(10)], patronymic[rand.Next(10)], rand.Next(2560), rand.Next(1440)));
             }
-            for (int i = 0; i < 50; i++)
+            for (int i = 0; i < 5; i++)
             {
-                DashBoardRoot.Elements.Add(new Relation((Relation.RelationTypes)(rand.Next(5)), (DashBoardObject)DashBoardRoot.Elements[rand.Next(100)], (DashBoardObject)DashBoardRoot.Elements[rand.Next(100)]));
+                DashBoardRoot.Elements.Add(new Relation((Relation.RelationTypes)(rand.Next(5)), (DashBoardObject)DashBoardRoot.Elements[rand.Next(10)], (DashBoardObject)DashBoardRoot.Elements[rand.Next(10)]));
             }
+            YourBoard.PersonWindow personWindow = new YourBoard.PersonWindow();
+            personWindow.Show();
         }
     }
 }
