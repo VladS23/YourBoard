@@ -9,12 +9,14 @@
 
   <ItemGroup>
     <None Remove="Icons\person.png" />
+    <None Remove="person.png" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="Icons\person.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="person.png" />
   </ItemGroup>
 
 </Project>

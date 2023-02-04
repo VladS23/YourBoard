@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:YourBoard"
         mc:Ignorable="d"
-        Title="PersonWindow" Height="420" Width="600">
+        Title="PersonWindow" Height="380" Width="600">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
@@ -23,11 +23,50 @@
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-        <TextBox  x:Name="nameTextBox" Background="#FF455E83" BorderBrush="White" Grid.Column="0" Grid.Row="0" Margin="3,10,10,3"/>
+        <TextBox  x:Name="nameTextBox" Background="GhostWhite" BorderBrush="LightGray" BorderThickness="1" Grid.Column="0" Grid.Row="0" Margin="3,10,10,3" Foreground="Blue"/>
         <TextBlock x:Name="nameTextBlock" IsHitTestVisible="False" Text="Имя" Foreground="LightGray" Grid.Column="0" Grid.Row="0" Margin="10,13,10,0"/>
-        <TextBox  x:Name="surnameTextBox" Background="#FF455E83" BorderBrush="White" Grid.Column="0" Grid.Row="1" Margin="3,10,10,3"/>
+        <TextBox  x:Name="surnameTextBox" Background="GhostWhite" BorderBrush="LightGray" BorderThickness="1" Grid.Column="0" Grid.Row="1" Margin="3,10,10,3" Foreground="Blue"/>
         <TextBlock x:Name="surnameTextBlock" IsHitTestVisible="False" Text="Фамилия" Foreground="LightGray" Grid.Column="0" Grid.Row="1" Margin="10,13,10,0" />
+        <TextBox  x:Name="patronymicTextBox" Background="GhostWhite" BorderBrush="LightGray" BorderThickness="1" Grid.Column="0" Grid.Row="2" Margin="3,10,10,3" Foreground="Blue"/>
+        <TextBlock x:Name="patronymicTextBlock" IsHitTestVisible="False" Text="Отчество" Foreground="LightGray" Grid.Column="0" Grid.Row="2" Margin="10,13,10,0" />
+        <TextBox  x:Name="dateTextBox" Background="GhostWhite" BorderBrush="LightGray" BorderThickness="1" Grid.Column="0" Grid.Row="3" Margin="3,10,10,3" Foreground="Blue"/>
+        <TextBlock x:Name="dateTextBlock" IsHitTestVisible="False" Text="Дата рождения" Foreground="LightGray" Grid.Column="0" Grid.Row="3" Margin="10,13,10,0" />
+        <TextBox  x:Name="emailTextBox" Background="GhostWhite" BorderBrush="LightGray" BorderThickness="1" Grid.Column="0" Grid.Row="4" Margin="3,10,10,3" Grid.ColumnSpan="2" Foreground="Blue"/>
+        <TextBlock x:Name="emailTextBlock" IsHitTestVisible="False" Text="Электронная почта" Foreground="LightGray" Grid.Column="0" Grid.Row="4" Margin="10,13,10,0" />
+        <TextBox  x:Name="adressTextBox" Background="GhostWhite" BorderBrush="LightGray" BorderThickness="1" Grid.Column="0" Grid.Row="5" Margin="3,10,10,3" Grid.ColumnSpan="2" Foreground="Blue"/>
+        <TextBlock x:Name="adressTextBlock" IsHitTestVisible="False" Text="Адресс" Foreground="LightGray" Grid.Column="0" Grid.Row="5" Margin="10,13,10,0" />
+        <TextBox  x:Name="workTextBox" Background="GhostWhite" BorderBrush="LightGray" BorderThickness="1" Grid.Column="0" Grid.Row="6" Margin="3,10,10,3" Foreground="Blue"/>
+        <TextBlock x:Name="workTextBlock" IsHitTestVisible="False" Text="Место работы" Foreground="LightGray" Grid.Column="0" Grid.Row="6" Margin="10,13,10,0" />
+        <TextBox  x:Name="univerTextBox" Background="GhostWhite" BorderBrush="LightGray" BorderThickness="1" Grid.Column="0" Grid.Row="7" Margin="3,10,10,3" Foreground="Blue"/>
+        <TextBlock x:Name="univerTextBlock" IsHitTestVisible="False" Text="Место учебы" Foreground="LightGray" Grid.Column="0" Grid.Row="7" Margin="10,13,10,0" />
+        <Image x:Name="photo"  Source="/person.png" Margin="3,10,10,3" Grid.Column="1" Grid.Row="0" Grid.RowSpan="3" ></Image>
+        <TextBox  x:Name="phoneTextBox" Background="GhostWhite" BorderBrush="LightGray" BorderThickness="1" Grid.Column="1" Grid.Row="3" Margin="3,10,10,3" Foreground="Blue"/>
+        <TextBlock x:Name="phoneTextBlock" IsHitTestVisible="False" Text="Телефон" Foreground="LightGray" Grid.Column="1" Grid.Row="3" Margin="10,13,10,0" />
+        <TextBox  x:Name="postTextBox" Background="GhostWhite" BorderBrush="LightGray" BorderThickness="1" Grid.Column="1" Grid.Row="6" Margin="3,10,10,3" Foreground="Blue"/>
+        <TextBlock x:Name="postTextBlock" IsHitTestVisible="False" Text="Должность" Foreground="LightGray" Grid.Column="1" Grid.Row="6" Margin="10,13,10,0" />
+        <TextBox  x:Name="specTextBox" Background="GhostWhite" BorderBrush="LightGray" BorderThickness="1" Grid.Column="1" Grid.Row="7" Margin="3,10,10,3" Foreground="Blue"/>
+        <TextBlock x:Name="specTextBlock" IsHitTestVisible="False" Text="Специальность" Foreground="LightGray" Grid.Column="1" Grid.Row="7" Margin="10,13,10,0" />
+        <TextBox  x:Name="VkTextBox" Background="GhostWhite" BorderBrush="LightGray" BorderThickness="1" Grid.Column="2" Grid.Row="0" Margin="3,10,10,3" Foreground="Blue"/>
+        <TextBlock x:Name="VkTextBlock" IsHitTestVisible="False" Text="VK ID" Foreground="LightGray" Grid.Column="2" Grid.Row="0" Margin="10,13,10,0" />
+        <TextBox  x:Name="other1extBox" Background="GhostWhite" BorderBrush="LightGray" BorderThickness="1" Grid.Column="2" Grid.Row="1" Margin="3,10,10,3" Foreground="Blue"/>
+        <TextBlock x:Name="other1TextBlock" IsHitTestVisible="False" Text="Другое" Foreground="LightGray" Grid.Column="2" Grid.Row="1" Margin="10,13,10,0" />
+        <TextBox  x:Name="other2extBox" Background="GhostWhite" BorderBrush="LightGray" BorderThickness="1" Grid.Column="2" Grid.Row="2" Margin="3,10,10,3" Foreground="Blue"/>
+        <TextBlock x:Name="other2TextBlock" IsHitTestVisible="False" Text="Другое" Foreground="LightGray" Grid.Column="2" Grid.Row="2" Margin="10,13,10,0" />
+        <TextBox  x:Name="other3extBox" Background="GhostWhite" BorderBrush="LightGray" BorderThickness="1" Grid.Column="2" Grid.Row="3" Margin="3,10,10,3" Foreground="Blue"/>
+        <TextBlock x:Name="other3TextBlock" IsHitTestVisible="False" Text="Другое" Foreground="LightGray" Grid.Column="2" Grid.Row="3" Margin="10,13,10,0" />
+        <RichTextBox x:Name="commTexBox" Background="GhostWhite" BorderBrush="LightGray" BorderThickness="1" Grid.Column="2" Grid.Row="4" Margin="3,10,10,3" Foreground="Blue" Grid.ColumnSpan="2" Grid.RowSpan="4"></RichTextBox>
+        <TextBlock x:Name="commTextBlock" IsHitTestVisible="False" Text="Комментарий" Foreground="LightGray" Grid.Column="2" Grid.Row="4" Margin="10,13,10,0" />
+        <TextBox  x:Name="TgTextBox" Background="GhostWhite" BorderBrush="LightGray" BorderThickness="1" Grid.Column="3" Grid.Row="0" Margin="3,10,10,3" Foreground="Blue"/>
+        <TextBlock x:Name="TgTextBlock" IsHitTestVisible="False" Text="TG ID" Foreground="LightGray" Grid.Column="3" Grid.Row="0" Margin="10,13,10,0" />
+        <TextBox  x:Name="other4extBox" Background="GhostWhite" BorderBrush="LightGray" BorderThickness="1" Grid.Column="3" Grid.Row="1" Margin="3,10,10,3" Foreground="Blue"/>
+        <TextBlock x:Name="other4TextBlock" IsHitTestVisible="False" Text="Другое" Foreground="LightGray" Grid.Column="3" Grid.Row="1" Margin="10,13,10,0" />
+        <TextBox  x:Name="other5extBox" Background="GhostWhite" BorderBrush="LightGray" BorderThickness="1" Grid.Column="3" Grid.Row="2" Margin="3,10,10,3" Foreground="Blue"/>
+        <TextBlock x:Name="other5TextBlock" IsHitTestVisible="False" Text="Другое" Foreground="LightGray" Grid.Column="3" Grid.Row="2" Margin="10,13,10,0" />
+        <TextBox  x:Name="other6extBox" Background="GhostWhite" BorderBrush="LightGray" BorderThickness="1" Grid.Column="3" Grid.Row="3" Margin="3,10,10,3" Foreground="Blue"/>
+        <TextBlock x:Name="other6TextBlock" IsHitTestVisible="False" Text="Другое" Foreground="LightGray" Grid.Column="3" Grid.Row="3" Margin="10,13,10,0" />
+        <Button x:Name="createBtn" Grid.Column="3" Grid.Row="8" Margin="30,7,30,7" Background="GhostWhite" Content="Создать" Foreground="LightGray" BorderBrush="LightGray"></Button>
+        <Button x:Name="cancellBtn" Grid.Column="2" Grid.Row="8" Margin="30,7,30,7" Background="GhostWhite" Content="Отмена" Foreground="LightGray" BorderBrush="LightGray"></Button>
     </Grid>
+
 </Window>
