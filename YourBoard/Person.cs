@@ -15,26 +15,26 @@ namespace YourBoard
 {
     public class Person:DashBoardObject
     {
-        public string PersonName { get; set; }
-        public string PersonSurname { get; set; }
-        public string PersonPatronymic { get; set; }
-        public string PersonBornDate { get; set; }
-        public string PersonEmail{ get; set; }
-        public string PersonAdress { get; set; }
-        public string PersonWork { get; set; }
-        public string PersonUniver { get; set; }
-        public string PersonPhone{ get; set; }
-        public string PersonPost { get; set; }
-        public string PersonSpec { get; set; }
-        public string PersonVk{ get; set; }
-        public string PersonTg{ get; set; }
-        public TextRange PersonComm { get; set; }
-        public string PersonOtherInfo1 { get; set; }
-        public string PersonOtherInfo2 { get; set; }
-        public string PersonOtherInfo3 { get; set; }
-        public string PersonOtherInfo4 { get; set; }
-        public string PersonOtherInfo5 { get; set; }
-        public string PersonOtherInfo6 { get; set; }
+        public string PersonName { get; set; } = "";
+        public string PersonSurname { get; set; } = "";
+        public string PersonPatronymic { get; set; } = "";
+        public string PersonBornDate { get; set; } = "";
+        public string PersonEmail{ get; set; } = "";
+        public string PersonAdress { get; set; } = "";
+        public string PersonWork { get; set; } = "";
+        public string PersonUniver { get; set; } = "";
+        public string PersonPhone{ get; set; } = "";
+        public string PersonPost { get; set; } = "";
+        public string PersonSpec { get; set; } = "";
+        public string PersonVk{ get; set; } = "";
+        public string PersonTg{ get; set; } = "";
+        public string PersonComm { get; set; } = "";
+        public string PersonOtherInfo1 { get; set; } = "";
+        public string PersonOtherInfo2 { get; set; } = "";
+        public string PersonOtherInfo3 { get; set; } = "";
+        public string PersonOtherInfo4 { get; set; } = "";
+        public string PersonOtherInfo5 { get; set; } = "";
+        public string PersonOtherInfo6 { get; set; } = "";
         public Person(string avatar, string personSurname, string personName, string personPatronymic, double X, double Y)
         {
             try

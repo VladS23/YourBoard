@@ -138,7 +138,8 @@ namespace YourBoard
             {
                 TgTextBlock.Visibility = Visibility.Hidden;
             }
-            commTextBox.Document.Blocks.Add(new Paragraph(new Run(person.PersonComm.ToString())));
+            person.PersonComm.ToString();
+            commTextBox.Document.Blocks.Add(new Paragraph(new Run(person.PersonComm.ToString()==null?" ": person.PersonComm.ToString())));
             if (new TextRange(commTextBox.Document.ContentStart, commTextBox.Document.ContentEnd).Text.Trim() != "")
             {
                 commTextBlock.Visibility = Visibility.Hidden;
