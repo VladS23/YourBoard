@@ -72,7 +72,16 @@ namespace YourBoard
             commTextBox.GotFocus += commTextBoxGotFocus;
             commTextBox.LostFocus += commTextBoxLostFocus;
             createBtn.Click += SaveOrCreate;
+            cancellBtn.Click += Cansel;
 
+        }
+
+        private void Cansel(object sender, RoutedEventArgs e)
+        {
+            if (windowType == MainWindow.WindowType.Update)
+            {
+                this.Close();
+            }
         }
 
         private void SaveOrCreate(object sender, RoutedEventArgs e)
