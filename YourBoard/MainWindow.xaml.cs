@@ -21,6 +21,11 @@ namespace YourBoard
     /// </summary>
     public partial class MainWindow : Window
     {
+        public enum WindowType
+        {
+            Create=0,
+            Update=1
+        }
         public MainWindow()
         {
             InitializeComponent();
@@ -38,7 +43,7 @@ namespace YourBoard
             {
                 DashBoardRoot.Elements.Add(new Relation((Relation.RelationTypes)(rand.Next(5)), (DashBoardObject)DashBoardRoot.Elements[rand.Next(10)], (DashBoardObject)DashBoardRoot.Elements[rand.Next(10)]));
             }
-            YourBoard.PersonWindow personWindow = new YourBoard.PersonWindow();
+            YourBoard.PersonWindow personWindow = new YourBoard.PersonWindow(WindowType.Create,  new Person("", "", "", "", 100000, 100000));
             personWindow.Show();
         }
     }

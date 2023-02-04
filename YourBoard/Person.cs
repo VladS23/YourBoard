@@ -12,7 +12,7 @@ using System.Windows.Media;
 
 namespace YourBoard
 {
-    internal class Person:DashBoardObject
+    public class Person:DashBoardObject
     {
         public string PersonName;
         public string PersonSurname;
