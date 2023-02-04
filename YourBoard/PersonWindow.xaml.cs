@@ -19,9 +19,13 @@ namespace YourBoard
     /// </summary>
     public partial class PersonWindow : Window
     {
-        public PersonWindow(MainWindow.WindowType type, Person person)
+        public PersonWindow(MainWindow.WindowType type, Person person, Point point)
         {
             InitializeComponent();
+            if (type == MainWindow.WindowType.Update)
+            {
+                createBtn.Content = "Сохранить";
+            }
             nameTextBox.GotFocus += nameTextBoxGotFocus;
             nameTextBox.LostFocus += nameTextBoxLostFocus;
             surnameTextBox.GotFocus += surnameTextBoxGotFocus;

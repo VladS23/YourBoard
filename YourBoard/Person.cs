@@ -9,14 +9,32 @@ using System.Windows.Controls;
 using System.IO;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Documents;
 
 namespace YourBoard
 {
     public class Person:DashBoardObject
     {
-        public string PersonName;
-        public string PersonSurname;
-        public string PerssonPatronymic;
+        public string PersonName { get; set; }
+        public string PersonSurname { get; set; }
+        public string PerssonPatronymic { get; set; }
+        public string PerssonBornDate { get; set; }
+        public string PerssonEmail{ get; set; }
+        public string PerssonAdress { get; set; }
+        public string PerssonWork { get; set; }
+        public string PerssonUniver { get; set; }
+        public string PerssonPhone{ get; set; }
+        public string PerssonPost { get; set; }
+        public string PerssonSpec { get; set; }
+        public string PerssonVk{ get; set; }
+        public string PerssonTg{ get; set; }
+        public TextRange PersonComm { get; set; }
+        public string PerssonOtherInfo1 { get; set; }
+        public string PerssonOtherInfo2 { get; set; }
+        public string PerssonOtherInfo3 { get; set; }
+        public string PerssonOtherInfo4 { get; set; }
+        public string PerssonOtherInfo5 { get; set; }
+        public string PerssonOtherInfo6 { get; set; }
         public Person(string avatar, string personSurname, string personName, string personPatronymic, double X, double Y)
         {
             try

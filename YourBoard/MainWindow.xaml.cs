@@ -43,7 +43,7 @@ namespace YourBoard
             {
                 DashBoardRoot.Elements.Add(new Relation((Relation.RelationTypes)(rand.Next(5)), (DashBoardObject)DashBoardRoot.Elements[rand.Next(10)], (DashBoardObject)DashBoardRoot.Elements[rand.Next(10)]));
             }
-            YourBoard.PersonWindow personWindow = new YourBoard.PersonWindow(WindowType.Create,  new Person("", "", "", "", 100000, 100000));
+            YourBoard.PersonWindow personWindow = new YourBoard.PersonWindow(WindowType.Update,  new Person("", "", "", "", 100000, 100000), new Point(10000, 10000));
             personWindow.Show();
         }
     }
