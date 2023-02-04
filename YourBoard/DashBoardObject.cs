@@ -16,6 +16,7 @@ namespace YourBoard
         public StackPanel view = new StackPanel();
         public static bool isMousePressedinObject = false;
         public List<Relation> Relations = new List<Relation>();
+        protected Button myButton = new Button();
         public double X
         {
             get { return x; }
@@ -33,7 +34,6 @@ namespace YourBoard
         {
             X = X_;
             Y = Y_;
-            Button myButton = new Button();
             BitmapImage myBitmapImage = new BitmapImage();
             Image PersonImage = new Image();
             myBitmapImage.BeginInit();
@@ -58,6 +58,7 @@ namespace YourBoard
             myButton.PreviewMouseLeftButtonUp += OnMouseUp;
             myButton.PreviewMouseLeftButtonDown += OnMouseDown;
         }
+
         public override void Delete()
         {
 

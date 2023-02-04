@@ -73,7 +73,13 @@ namespace YourBoard
                 patronymicTextBlock.HorizontalAlignment = HorizontalAlignment.Center;
                 view.Children.Add(patronymicTextBlock);
             }
+            myButton.MouseDoubleClick += DoubleClick;
+        }
 
+        private void DoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            PersonWindow p = new PersonWindow(MainWindow.WindowType.Update, this, new Point(10000, 10000));
+            p.Show();
         }
     }
 }

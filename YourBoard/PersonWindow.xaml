@@ -24,10 +24,10 @@
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-        <TextBox  x:Name="nameTextBox" Background="GhostWhite" BorderBrush="LightGray" BorderThickness="1" Grid.Column="0" Grid.Row="0" Margin="3,10,10,3" Foreground="Blue"/>
-        <TextBlock x:Name="nameTextBlock" IsHitTestVisible="False" Text="Имя" Foreground="LightGray" Grid.Column="0" Grid.Row="0" Margin="10,13,10,0"/>
-        <TextBox  x:Name="surnameTextBox" Background="GhostWhite" BorderBrush="LightGray" BorderThickness="1" Grid.Column="0" Grid.Row="1" Margin="3,10,10,3" Foreground="Blue"/>
-        <TextBlock x:Name="surnameTextBlock" IsHitTestVisible="False" Text="Фамилия" Foreground="LightGray" Grid.Column="0" Grid.Row="1" Margin="10,13,10,0" />
+        <TextBox  x:Name="nameTextBox" Background="GhostWhite" BorderBrush="LightGray" BorderThickness="1" Grid.Column="0" Grid.Row="1" Margin="3,10,10,3" Foreground="Blue"/>
+        <TextBlock x:Name="nameTextBlock" IsHitTestVisible="False" Text="Имя" Foreground="LightGray" Grid.Column="0" Grid.Row="1" Margin="10,13,10,0"/>
+        <TextBox  x:Name="surnameTextBox" Background="GhostWhite" BorderBrush="LightGray" BorderThickness="1" Grid.Column="0" Grid.Row="0" Margin="3,10,10,3" Foreground="Blue"/>
+        <TextBlock x:Name="surnameTextBlock" IsHitTestVisible="False" Text="Фамилия" Foreground="LightGray" Grid.Column="0" Grid.Row="0" Margin="10,13,10,0" />
         <TextBox  x:Name="patronymicTextBox" Background="GhostWhite" BorderBrush="LightGray" BorderThickness="1" Grid.Column="0" Grid.Row="2" Margin="3,10,10,3" Foreground="Blue"/>
         <TextBlock x:Name="patronymicTextBlock" IsHitTestVisible="False" Text="Отчество" Foreground="LightGray" Grid.Column="0" Grid.Row="2" Margin="10,13,10,0" />
         <TextBox  x:Name="dateTextBox" Background="GhostWhite" BorderBrush="LightGray" BorderThickness="1" Grid.Column="0" Grid.Row="3" Margin="3,10,10,3" Foreground="Blue"/>
