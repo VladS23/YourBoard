@@ -25,6 +25,7 @@ namespace YourBoard
             if (type == MainWindow.WindowType.Update)
             {
                 createBtn.Content = "Сохранить";
+                LoadPersonData(person);
             }
             nameTextBox.GotFocus += nameTextBoxGotFocus;
             nameTextBox.LostFocus += nameTextBoxLostFocus;
@@ -69,6 +70,112 @@ namespace YourBoard
 
 
         }
+
+        private void LoadPersonData(Person person)
+        {
+            nameTextBox.Text = person.PersonName;
+            if (nameTextBox.Text != "")
+            {
+                nameTextBlock.Visibility = Visibility.Hidden;
+            }
+            surnameTextBox.Text = person.PersonSurname;
+            if (surnameTextBox.Text != "")
+            {
+                surnameTextBlock.Visibility = Visibility.Hidden;
+            }
+            patronymicTextBox.Text = person.PersonPatronymic;
+            if (patronymicTextBox.Text != "")
+            {
+                patronymicTextBlock.Visibility = Visibility.Hidden;
+            }
+            dateTextBox.Text = person.PersonBornDate;
+            if (dateTextBox.Text != "")
+            {
+                dateTextBlock.Visibility = Visibility.Hidden;
+            }
+            emailTextBox.Text = person.PersonEmail;
+            if (emailTextBox.Text != "")
+            {
+                emailTextBlock.Visibility = Visibility.Hidden;
+            }
+            adressTextBox.Text = person.PersonAdress;
+            if (adressTextBox.Text != "")
+            {
+                adressTextBlock.Visibility = Visibility.Hidden;
+            }
+            workTextBox.Text = person.PersonWork;
+            if (workTextBox.Text != "")
+            {
+                workTextBlock.Visibility = Visibility.Hidden;
+            }
+            univerTextBox.Text = person.PersonUniver;
+            if (univerTextBox.Text != "")
+            {
+                univerTextBlock.Visibility = Visibility.Hidden;
+            }
+            phoneTextBox.Text = person.PersonPhone;
+            if (phoneTextBox.Text != "")
+            {
+                phoneTextBlock.Visibility = Visibility.Hidden;
+            }
+            postTextBox.Text = person.PersonPost;
+            if (postTextBox.Text != "")
+            {
+                postTextBlock.Visibility = Visibility.Hidden;
+            }
+            specTextBox.Text = person.PersonSpec;
+            if (specTextBox.Text != "")
+            {
+                specTextBlock.Visibility = Visibility.Hidden;
+            }
+            VkTextBox.Text = person.PersonVk;
+            if (VkTextBox.Text != "")
+            {
+                VkTextBlock.Visibility = Visibility.Hidden;
+            }
+            TgTextBox.Text = person.PersonPost;
+            if (TgTextBox.Text != "")
+            {
+                TgTextBlock.Visibility = Visibility.Hidden;
+            }
+            commTextBox.Document.Blocks.Add(new Paragraph(new Run(person.PersonComm.ToString())));
+            if (new TextRange(commTextBox.Document.ContentStart, commTextBox.Document.ContentEnd).Text.Trim() != "")
+            {
+                commTextBlock.Visibility = Visibility.Hidden;
+            }
+            other1TextBox.Text = person.PersonOtherInfo1;
+            if (other1TextBox.Text != "")
+            {
+                other1TextBlock.Visibility = Visibility.Hidden;
+            }
+            other2TextBox.Text = person.PersonOtherInfo2;
+            if (other2TextBox.Text != "")
+            {
+                other2TextBlock.Visibility = Visibility.Hidden;
+            }
+            other2TextBox.Text = person.PersonOtherInfo2;
+            if (other2TextBox.Text != "")
+            {
+                other2TextBlock.Visibility = Visibility.Hidden;
+            }
+            other3TextBox.Text = person.PersonOtherInfo3;
+            if (other3TextBox.Text != "")
+            {
+                other3TextBlock.Visibility = Visibility.Hidden;
+            }
+            other4TextBox.Text = person.PersonOtherInfo4;
+            if (other4TextBox.Text != "")
+            {
+                other4TextBlock.Visibility = Visibility.Hidden;
+            }
+            other5TextBox.Text = person.PersonOtherInfo5;
+            if (other5TextBox.Text != "")
+            {
+                other5TextBlock.Visibility = Visibility.Hidden;
+            }
+
+        }
+
         private void commTextBoxLostFocus(object sender, RoutedEventArgs e)
         {
             if (new TextRange(commTextBox.Document.ContentStart, commTextBox.Document.ContentEnd).Text.Trim() == "")

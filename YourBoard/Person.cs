@@ -17,24 +17,24 @@ namespace YourBoard
     {
         public string PersonName { get; set; }
         public string PersonSurname { get; set; }
-        public string PerssonPatronymic { get; set; }
-        public string PerssonBornDate { get; set; }
-        public string PerssonEmail{ get; set; }
-        public string PerssonAdress { get; set; }
-        public string PerssonWork { get; set; }
-        public string PerssonUniver { get; set; }
-        public string PerssonPhone{ get; set; }
-        public string PerssonPost { get; set; }
-        public string PerssonSpec { get; set; }
-        public string PerssonVk{ get; set; }
-        public string PerssonTg{ get; set; }
+        public string PersonPatronymic { get; set; }
+        public string PersonBornDate { get; set; }
+        public string PersonEmail{ get; set; }
+        public string PersonAdress { get; set; }
+        public string PersonWork { get; set; }
+        public string PersonUniver { get; set; }
+        public string PersonPhone{ get; set; }
+        public string PersonPost { get; set; }
+        public string PersonSpec { get; set; }
+        public string PersonVk{ get; set; }
+        public string PersonTg{ get; set; }
         public TextRange PersonComm { get; set; }
-        public string PerssonOtherInfo1 { get; set; }
-        public string PerssonOtherInfo2 { get; set; }
-        public string PerssonOtherInfo3 { get; set; }
-        public string PerssonOtherInfo4 { get; set; }
-        public string PerssonOtherInfo5 { get; set; }
-        public string PerssonOtherInfo6 { get; set; }
+        public string PersonOtherInfo1 { get; set; }
+        public string PersonOtherInfo2 { get; set; }
+        public string PersonOtherInfo3 { get; set; }
+        public string PersonOtherInfo4 { get; set; }
+        public string PersonOtherInfo5 { get; set; }
+        public string PersonOtherInfo6 { get; set; }
         public Person(string avatar, string personSurname, string personName, string personPatronymic, double X, double Y)
         {
             try
@@ -51,6 +51,7 @@ namespace YourBoard
                 TextBlock surnameTextBlock = new TextBlock();
                 surnameTextBlock.FontWeight = System.Windows.FontWeights.Bold;
                 surnameTextBlock.Text = personSurname;
+                PersonSurname = personSurname;
                 surnameTextBlock.HorizontalAlignment = HorizontalAlignment.Center;
                 view.Children.Add(surnameTextBlock);
             }
@@ -59,6 +60,7 @@ namespace YourBoard
                 TextBlock nameTextBlock = new TextBlock();
                 nameTextBlock.FontWeight = System.Windows.FontWeights.Bold;
                 nameTextBlock.Text = personName;
+                PersonName = personName;
                 nameTextBlock.HorizontalAlignment = HorizontalAlignment.Center;
                 view.Children.Add(nameTextBlock);
             }
@@ -67,6 +69,7 @@ namespace YourBoard
                 TextBlock patronymicTextBlock = new TextBlock();
                 patronymicTextBlock.FontWeight = System.Windows.FontWeights.Bold;
                 patronymicTextBlock.Text = personPatronymic;
+                PersonPatronymic = personPatronymic;
                 patronymicTextBlock.HorizontalAlignment = HorizontalAlignment.Center;
                 view.Children.Add(patronymicTextBlock);
             }
