@@ -26,8 +26,8 @@
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <TextBox  x:Name="nameTextBox" Background="#FF455E83" BorderBrush="White" Grid.Column="0" Grid.Row="0" Margin="3,10,10,3"/>
-        <TextBlock IsHitTestVisible="False" Text="Имя" Foreground="LightGray" Grid.Column="0" Grid.Row="0" Margin="10,15,10,0"/>
+        <TextBlock x:Name="nameTextBlock" IsHitTestVisible="False" Text="Имя" Foreground="LightGray" Grid.Column="0" Grid.Row="0" Margin="10,13,10,0"/>
         <TextBox  x:Name="surnameTextBox" Background="#FF455E83" BorderBrush="White" Grid.Column="0" Grid.Row="1" Margin="3,10,10,3"/>
-        <TextBlock IsHitTestVisible="False" Text="Фамилия" Foreground="LightGray" Grid.Column="0" Grid.Row="1" Margin="15,12,10,15" />
+        <TextBlock x:Name="surnameTextBlock" IsHitTestVisible="False" Text="Фамилия" Foreground="LightGray" Grid.Column="0" Grid.Row="1" Margin="10,13,10,0" />
     </Grid>
 </Window>

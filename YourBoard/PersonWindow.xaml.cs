@@ -22,6 +22,37 @@ namespace YourBoard
         public PersonWindow()
         {
             InitializeComponent();
+            nameTextBox.GotFocus += nameTextBoxGotFocus;
+            nameTextBox.LostFocus += nameTextBoxLostFocus;
+            surnameTextBox.GotFocus += surnameTextBoxGotFocus;
+            surnameTextBox.LostFocus += surnameTextBoxLostFocus;
+
+        }
+
+        private void surnameTextBoxLostFocus(object sender, RoutedEventArgs e)
+        {
+            if (surnameTextBox.Text == "")
+            {
+                surnameTextBlock.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void surnameTextBoxGotFocus(object sender, RoutedEventArgs e)
+        {
+                surnameTextBlock.Visibility = Visibility.Hidden;
+        }
+
+        private void nameTextBoxLostFocus(object sender, RoutedEventArgs e)
+        {
+            if (nameTextBox.Text == "")
+            {
+                nameTextBlock.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void nameTextBoxGotFocus(object sender, RoutedEventArgs e)
+        {
+            nameTextBlock.Visibility = Visibility.Hidden;
         }
     }
 }
